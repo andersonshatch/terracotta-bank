@@ -6,7 +6,98 @@
       "tool": {
         "driver": {
           "name": "contrast-assess",
-          "rules": [],
+          "rules": [
+            {
+              "id": "Pages Without Anti-Clickjacking Controls",
+              "shortDescription": {
+                "text": "Pages Without Anti-Clickjacking Controls detected"
+              },
+              "fullDescription": {
+                "text": "Pages Without Anti-Clickjacking Controls detected"
+              }
+            },
+            {
+              "id": "SQL Injection",
+              "shortDescription": {
+                "text": "SQL Injection from \"password\" Parameter, \"username\" Parameter on \"/login\" page"
+              },
+              "fullDescription": {
+                "text": "SQL Injection from \"password\" Parameter, \"username\" Parameter on \"/login\" page"
+              }
+            },
+            {
+              "id": "Cross-Site Scripting",
+              "shortDescription": {
+                "text": "Cross-Site Scripting from \"depositAmount\" Parameter on \"/makeDeposit\" page"
+              },
+              "fullDescription": {
+                "text": "Cross-Site Scripting from \"depositAmount\" Parameter on \"/makeDeposit\" page"
+              }
+            },
+            {
+              "id": "XML External Entity Injection (XXE)",
+              "shortDescription": {
+                "text": "XML External Entity Injection (XXE) from Request Body on \"/transferMoney\" page"
+              },
+              "fullDescription": {
+                "text": "XML External Entity Injection (XXE) from Request Body on \"/transferMoney\" page"
+              }
+            },
+            {
+              "id": "Path Traversal",
+              "shortDescription": {
+                "text": "Path Traversal from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
+              },
+              "fullDescription": {
+                "text": "Path Traversal from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
+              }
+            },
+            {
+              "id": "Cross-Site Scripting",
+              "shortDescription": {
+                "text": "Cross-Site Scripting from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
+              },
+              "fullDescription": {
+                "text": "Cross-Site Scripting from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
+              }
+            },
+            {
+              "id": "Insecure Hash Algorithms",
+              "shortDescription": {
+                "text": "'MD5' hash algorithm used at GranteeManager"
+              },
+              "fullDescription": {
+                "text": "'MD5' hash algorithm used at GranteeManager"
+              }
+            },
+            {
+              "id": "Application Disables ''secure'' Flag on Cookies",
+              "shortDescription": {
+                "text": "Application Disables 'secure' Flag on Cookies observed at Response.java (JSESSIONID)"
+              },
+              "fullDescription": {
+                "text": "Application Disables 'secure' Flag on Cookies observed at Response.java (JSESSIONID)"
+              }
+            },
+            {
+              "id": "Session Cookie Has No 'HttpOnly' Flag",
+              "shortDescription": {
+                "text": "Session Cookie Has No 'HttpOnly' Flag in Response.java"
+              },
+              "fullDescription": {
+                "text": "Session Cookie Has No 'HttpOnly' Flag in Response.java"
+              }
+            },
+            {
+              "id": "Forms Without Autocomplete Prevention",
+              "shortDescription": {
+                "text": "Forms Without Autocomplete Prevention detected"
+              },
+              "fullDescription": {
+                "text": "Forms Without Autocomplete Prevention detected"
+              }
+            }
+          ],
           "version": "1.0.0",
           "informationUri": "https://contrastsecurity.com"
         }
@@ -41,7 +132,9 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "locations": [],
+          "ruleIndex": 0
         },
         {
           "level": "error",
@@ -49,6 +142,168 @@
             "text": "SQL Injection from \"password\" Parameter, \"username\" Parameter on \"/login\" page"
           },
           "ruleId": "SQL Injection",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 380
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "LoginServlet.java",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 63
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.LoginServlet.doPost()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 648
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 729
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 292
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "WsFilter.java",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestClassificationFilter.java",
+                  "index": 5
+                },
+                "region": {
+                  "startLine": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/login",
             "method": "POST",
@@ -65,13 +320,27 @@
             "contrast_status": "Reported",
             "contrast_substatus": ""
           },
-          "locations": [],
           "codeFlows": [
             {
               "threadFlows": [
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 380
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -1153,6 +1422,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 180
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.append()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -2251,6 +2535,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 380
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -3332,6 +3631,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 180
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.append()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -4430,6 +4744,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 453
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.toString()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -5528,25 +5857,23 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "NOT AVAILABLE"
+                          },
+                          "region": {
+                            "startLine": 1
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "NOT AVAILABLE"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
                           {
                             "location": {
                               "physicalLocation": {
@@ -6662,7 +6989,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 1
         },
         {
           "level": "note",
@@ -6670,6 +6998,168 @@
             "text": "Cross-Site Scripting from \"depositAmount\" Parameter on \"/makeDeposit\" page"
           },
           "ruleId": "Cross-Site Scripting",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 380
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "MakeDepositServlet.java",
+                  "index": 6
+                },
+                "region": {
+                  "startLine": 84
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.MakeDepositServlet.doPost()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 648
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 729
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 292
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "WsFilter.java",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestClassificationFilter.java",
+                  "index": 5
+                },
+                "region": {
+                  "startLine": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/makeDeposit",
             "method": "POST",
@@ -6692,6 +7182,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 380
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -7773,6 +8278,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "Pattern.java"
+                          },
+                          "region": {
+                            "startLine": 1135
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.util.regex.Pattern.matcher()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -8888,6 +9408,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 180
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.append()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -9986,6 +10521,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 453
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.toString()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -11084,6 +11634,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "JspWriterImpl.java"
+                          },
+                          "region": {
+                            "startLine": 330
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.jasper.runtime.JspWriterImpl.write()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -12303,7 +12868,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 2
         },
         {
           "level": "warning",
@@ -12311,6 +12877,168 @@
             "text": "XML External Entity Injection (XXE) from Request Body on \"/transferMoney\" page"
           },
           "ruleId": "XML External Entity Injection (XXE)",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 364
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getInputStream()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ContentParsingFilter.java",
+                  "index": 7
+                },
+                "region": {
+                  "startLine": 82
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.xmlDeserialize()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ContentParsingFilter.java",
+                  "index": 7
+                },
+                "region": {
+                  "startLine": 66
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.wrapRequest()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ContentParsingFilter.java",
+                  "index": 7
+                },
+                "region": {
+                  "startLine": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "DecryptionFilter.java",
+                  "index": 8
+                },
+                "region": {
+                  "startLine": 77
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.DecryptionFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "DecryptionFilter.java",
+                  "index": 8
+                },
+                "region": {
+                  "startLine": 66
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.DecryptionFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/transferMoney",
             "method": "POST",
@@ -12333,6 +13061,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 364
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getInputStream()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -13159,6 +13902,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "InputSource.java"
+                          },
+                          "region": {
+                            "startLine": 130
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.xml/org.xml.sax.InputSource.<init>()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -13985,6 +14743,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "DocumentBuilderImpl.java"
+                          },
+                          "region": {
+                            "startLine": 345
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -14813,7 +15586,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 3
         },
         {
           "level": "warning",
@@ -14821,6 +15595,168 @@
             "text": "Path Traversal from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
           },
           "ruleId": "Path Traversal",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 380
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "CheckLookupServlet.java",
+                  "index": 9
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.CheckLookupServlet.doPost()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 648
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 729
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 292
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "WsFilter.java",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestClassificationFilter.java",
+                  "index": 5
+                },
+                "region": {
+                  "startLine": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/checkLookup",
             "method": "POST",
@@ -14843,6 +15779,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 380
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -15924,6 +16875,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 180
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.append()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -17022,6 +17988,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 453
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.toString()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -18120,6 +19101,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "File.java"
+                          },
+                          "region": {
+                            "startLine": 282
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.io.File.<init>()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -19237,7 +20233,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 4
         },
         {
           "level": "note",
@@ -19245,6 +20242,168 @@
             "text": "Cross-Site Scripting from \"checkLookupNumber\" Parameter on \"/checkLookup\" page"
           },
           "ruleId": "Cross-Site Scripting",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 380
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "CheckLookupServlet.java",
+                  "index": 9
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.CheckLookupServlet.doPost()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 648
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServlet.java",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 729
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 292
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "WsFilter.java",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 240
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationFilterChain.java",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 207
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestClassificationFilter.java",
+                  "index": 5
+                },
+                "region": {
+                  "startLine": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/checkLookup",
             "method": "POST",
@@ -19267,6 +20426,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "RequestFacade.java"
+                          },
+                          "region": {
+                            "startLine": 380
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -20348,6 +21522,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 180
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.append()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -21429,6 +22618,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "StringBuilder.java"
+                          },
+                          "region": {
+                            "startLine": 453
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.lang.StringBuilder.toString()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -22510,6 +23714,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "JspWriterImpl.java"
+                          },
+                          "region": {
+                            "startLine": 330
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.jasper.runtime.JspWriterImpl.write()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -23729,7 +24948,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 2
         },
         {
           "level": "note",
@@ -23753,6 +24973,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "MessageDigest.java"
+                          },
+                          "region": {
+                            "startLine": 200
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "java.base/java.security.MessageDigest.getInstance()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -23768,210 +25003,6 @@
                               "logicalLocations": [
                                 {
                                   "fullyQualifiedName": "java.base/java.security.MessageDigest.getInstance()"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
                                 }
                               ]
                             }
@@ -24252,40 +25283,6 @@
                             "location": {
                               "physicalLocation": {
                                 "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
                                   "uri": "MethodProxy.java"
                                 },
                                 "region": {
@@ -24312,40 +25309,6 @@
                               "logicalLocations": [
                                 {
                                   "fullyQualifiedName": "org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept()"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "location": {
-                              "physicalLocation": {
-                                "artifactLocation": {
-                                  "uri": "NOT AVAILABLE"
-                                },
-                                "region": {
-                                  "startLine": 1
-                                }
-                              },
-                              "logicalLocations": [
-                                {
-                                  "fullyQualifiedName": "NOT AVAILABLE"
                                 }
                               ]
                             }
@@ -24972,7 +25935,170 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "MessageDigest.java",
+                  "index": 10
+                },
+                "region": {
+                  "startLine": 200
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "java.base/java.security.MessageDigest.getInstance()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "PooledConnection.java",
+                  "index": 11
+                },
+                "region": {
+                  "startLine": 307
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "PooledConnection.java",
+                  "index": 11
+                },
+                "region": {
+                  "startLine": 200
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.PooledConnection.connect()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ConnectionPool.java",
+                  "index": 12
+                },
+                "region": {
+                  "startLine": 728
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ConnectionPool.java",
+                  "index": 12
+                },
+                "region": {
+                  "startLine": 662
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ConnectionPool.java",
+                  "index": 12
+                },
+                "region": {
+                  "startLine": 480
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.init()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ConnectionPool.java",
+                  "index": 12
+                },
+                "region": {
+                  "startLine": 154
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.<init>()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "DataSourceProxy.java",
+                  "index": 13
+                },
+                "region": {
+                  "startLine": 115
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "DataSourceProxy.java",
+                  "index": 13
+                },
+                "region": {
+                  "startLine": 102
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "DataSourceProxy.java",
+                  "index": 13
+                },
+                "region": {
+                  "startLine": 126
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection()"
+                }
+              ]
+            }
+          ],
+          "ruleIndex": 6
         },
         {
           "level": "note",
@@ -24980,6 +26106,168 @@
             "text": "Application Disables 'secure' Flag on Cookies observed at Response.java (JSESSIONID)"
           },
           "ruleId": "Application Disables ''secure'' Flag on Cookies",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Response.java",
+                  "index": 14
+                },
+                "region": {
+                  "startLine": 987
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Response.java",
+                  "index": 14
+                },
+                "region": {
+                  "startLine": 923
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addSessionCookieInternal()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Request.java",
+                  "index": 15
+                },
+                "region": {
+                  "startLine": 3029
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Request.doGetSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Request.java",
+                  "index": 15
+                },
+                "region": {
+                  "startLine": 2343
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Request.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 895
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServletRequestWrapper.java",
+                  "index": 16
+                },
+                "region": {
+                  "startLine": 231
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServletRequestWrapper.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationHttpRequest.java",
+                  "index": 17
+                },
+                "region": {
+                  "startLine": 570
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationHttpRequest.java",
+                  "index": 17
+                },
+                "region": {
+                  "startLine": 515
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "PageContextImpl.java",
+                  "index": 18
+                },
+                "region": {
+                  "startLine": 137
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.jasper.runtime.PageContextImpl.initialize()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "JspFactoryImpl.java",
+                  "index": 19
+                },
+                "region": {
+                  "startLine": 109
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.jasper.runtime.JspFactoryImpl.internalGetPageContext()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/",
             "method": "GET",
@@ -25002,6 +26290,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "Response.java"
+                          },
+                          "region": {
+                            "startLine": 987
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -26221,7 +27524,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 7
         },
         {
           "level": "note",
@@ -26229,6 +27533,168 @@
             "text": "Session Cookie Has No 'HttpOnly' Flag in Response.java"
           },
           "ruleId": "Session Cookie Has No 'HttpOnly' Flag",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Response.java",
+                  "index": 14
+                },
+                "region": {
+                  "startLine": 987
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Response.java",
+                  "index": 14
+                },
+                "region": {
+                  "startLine": 923
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addSessionCookieInternal()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Request.java",
+                  "index": 15
+                },
+                "region": {
+                  "startLine": 3029
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Request.doGetSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Request.java",
+                  "index": 15
+                },
+                "region": {
+                  "startLine": 2343
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.Request.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "RequestFacade.java",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 895
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "HttpServletRequestWrapper.java",
+                  "index": 16
+                },
+                "region": {
+                  "startLine": 231
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "javax.servlet.http.HttpServletRequestWrapper.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationHttpRequest.java",
+                  "index": 17
+                },
+                "region": {
+                  "startLine": 570
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ApplicationHttpRequest.java",
+                  "index": 17
+                },
+                "region": {
+                  "startLine": 515
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "PageContextImpl.java",
+                  "index": 18
+                },
+                "region": {
+                  "startLine": 137
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.jasper.runtime.PageContextImpl.initialize()"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "JspFactoryImpl.java",
+                  "index": 19
+                },
+                "region": {
+                  "startLine": 109
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "org.apache.jasper.runtime.JspFactoryImpl.internalGetPageContext()"
+                }
+              ]
+            }
+          ],
           "webRequest": {
             "target": "/",
             "method": "GET",
@@ -26251,6 +27717,21 @@
                 {
                   "locations": [
                     {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "Response.java"
+                          },
+                          "region": {
+                            "startLine": 987
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
+                          }
+                        ]
+                      },
                       "stack": {
                         "frames": [
                           {
@@ -27470,7 +28951,8 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "ruleIndex": 8
         },
         {
           "level": "note",
@@ -27501,10 +28983,133 @@
                 "routeSignature": ""
               }
             }
-          ]
+          ],
+          "locations": [],
+          "ruleIndex": 9
         }
       ],
-      "artifacts": []
+      "artifacts": [
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "RequestFacade.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "LoginServlet.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "HttpServlet.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "ApplicationFilterChain.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "WsFilter.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "RequestClassificationFilter.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "MakeDepositServlet.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "ContentParsingFilter.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "DecryptionFilter.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "CheckLookupServlet.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "MessageDigest.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "PooledConnection.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "ConnectionPool.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "DataSourceProxy.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "Response.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "Request.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "HttpServletRequestWrapper.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "ApplicationHttpRequest.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "PageContextImpl.java"
+          }
+        },
+        {
+          "sourceLanguage": "Java",
+          "location": {
+            "uri": "JspFactoryImpl.java"
+          }
+        }
+      ]
     },
     {
       "tool": {
