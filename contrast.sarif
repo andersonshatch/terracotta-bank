@@ -8,15 +8,6 @@
           "name": "contrast-assess",
           "rules": [
             {
-              "id": "Pages Without Anti-Clickjacking Controls",
-              "shortDescription": {
-                "text": "Pages Without Anti-Clickjacking Controls detected"
-              },
-              "fullDescription": {
-                "text": "Pages Without Anti-Clickjacking Controls detected"
-              }
-            },
-            {
               "id": "SQL Injection",
               "shortDescription": {
                 "text": "SQL Injection from \"password\" Parameter, \"username\" Parameter on \"/login\" page"
@@ -87,15 +78,6 @@
               "fullDescription": {
                 "text": "Session Cookie Has No 'HttpOnly' Flag in Response.java"
               }
-            },
-            {
-              "id": "Forms Without Autocomplete Prevention",
-              "shortDescription": {
-                "text": "Forms Without Autocomplete Prevention detected"
-              },
-              "fullDescription": {
-                "text": "Forms Without Autocomplete Prevention detected"
-              }
             }
           ],
           "version": "1.0.0",
@@ -103,39 +85,6 @@
         }
       },
       "results": [
-        {
-          "level": "note",
-          "message": {
-            "text": "Pages Without Anti-Clickjacking Controls detected"
-          },
-          "ruleId": "Pages Without Anti-Clickjacking Controls",
-          "webRequest": {
-            "target": "/",
-            "method": "GET",
-            "protocol": "http",
-            "version": "1.1"
-          },
-          "provenance": {
-            "firstDetectionTimeUtc": "2024-06-12T15:51:00.000Z",
-            "lastDetectionTimeUtc": "2024-06-12T15:53:00.000Z"
-          },
-          "properties": {
-            "vulnerability_id": "450M-IRQA-8CEB-XD6N",
-            "contrast_severity": "Note",
-            "contrast_status": "Reported",
-            "contrast_substatus": ""
-          },
-          "codeFlows": [
-            {
-              "threadFlows": [],
-              "properties": {
-                "routeSignature": ""
-              }
-            }
-          ],
-          "locations": [],
-          "ruleIndex": 0
-        },
         {
           "level": "error",
           "message": {
@@ -146,160 +95,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "RequestFacade.java",
+                  "uri": "ServiceSupport.java",
                   "index": 0
                 },
                 "region": {
-                  "startLine": 380
+                  "startLine": 37
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "LoginServlet.java",
-                  "index": 1
-                },
-                "region": {
-                  "startLine": 63
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.LoginServlet.doPost()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 648
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 729
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 292
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "WsFilter.java",
-                  "index": 4
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestClassificationFilter.java",
-                  "index": 5
-                },
-                "region": {
-                  "startLine": 54
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.service.ServiceSupport.runQuery()"
                 }
               ]
             }
@@ -6990,7 +6795,7 @@
               }
             }
           ],
-          "ruleIndex": 1
+          "ruleIndex": 0
         },
         {
           "level": "note",
@@ -7002,160 +6807,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
+                  "uri": "error.jsp",
+                  "index": 1
                 },
                 "region": {
-                  "startLine": 380
+                  "startLine": 4
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "MakeDepositServlet.java",
-                  "index": 6
-                },
-                "region": {
-                  "startLine": 84
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.MakeDepositServlet.doPost()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 648
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 729
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 292
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "WsFilter.java",
-                  "index": 4
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestClassificationFilter.java",
-                  "index": 5
-                },
-                "region": {
-                  "startLine": 54
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                  "fullyQualifiedName": "error_jsp.service()"
                 }
               ]
             }
@@ -12869,7 +12530,7 @@
               }
             }
           ],
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "level": "warning",
@@ -12881,160 +12542,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
-                },
-                "region": {
-                  "startLine": 364
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getInputStream()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
                   "uri": "ContentParsingFilter.java",
-                  "index": 7
+                  "index": 2
                 },
                 "region": {
-                  "startLine": 82
+                  "startLine": 88
                 }
               },
               "logicalLocations": [
                 {
                   "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.xmlDeserialize()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ContentParsingFilter.java",
-                  "index": 7
-                },
-                "region": {
-                  "startLine": 66
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.wrapRequest()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ContentParsingFilter.java",
-                  "index": 7
-                },
-                "region": {
-                  "startLine": 54
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.ContentParsingFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "DecryptionFilter.java",
-                  "index": 8
-                },
-                "region": {
-                  "startLine": 77
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.DecryptionFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "DecryptionFilter.java",
-                  "index": 8
-                },
-                "region": {
-                  "startLine": 66
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.app.DecryptionFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
                 }
               ]
             }
@@ -15587,7 +15104,7 @@
               }
             }
           ],
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "level": "warning",
@@ -15599,160 +15116,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
-                },
-                "region": {
-                  "startLine": 380
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "CheckLookupServlet.java",
-                  "index": 9
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.CheckLookupServlet.doPost()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 648
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 729
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
+                  "uri": "CheckService.java",
                   "index": 3
                 },
                 "region": {
-                  "startLine": 292
+                  "startLine": 89
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "WsFilter.java",
-                  "index": 4
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestClassificationFilter.java",
-                  "index": 5
-                },
-                "region": {
-                  "startLine": 54
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.service.CheckService.findCheckImage()"
                 }
               ]
             }
@@ -20234,7 +19607,7 @@
               }
             }
           ],
-          "ruleIndex": 4
+          "ruleIndex": 3
         },
         {
           "level": "note",
@@ -20246,160 +19619,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
+                  "uri": "error.jsp",
+                  "index": 1
                 },
                 "region": {
-                  "startLine": 380
+                  "startLine": 4
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getParameter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "CheckLookupServlet.java",
-                  "index": 9
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.CheckLookupServlet.doPost()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 648
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServlet.java",
-                  "index": 2
-                },
-                "region": {
-                  "startLine": 729
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServlet.service()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 292
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "WsFilter.java",
-                  "index": 4
-                },
-                "region": {
-                  "startLine": 52
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.websocket.server.WsFilter.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 240
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.internalDoFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationFilterChain.java",
-                  "index": 3
-                },
-                "region": {
-                  "startLine": 207
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationFilterChain.doFilter()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestClassificationFilter.java",
-                  "index": 5
-                },
-                "region": {
-                  "startLine": 54
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.metrics.RequestClassificationFilter.doFilter()"
+                  "fullyQualifiedName": "error_jsp.service()"
                 }
               ]
             }
@@ -24949,7 +24178,7 @@
               }
             }
           ],
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "level": "note",
@@ -25940,165 +25169,21 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "MessageDigest.java",
-                  "index": 10
+                  "uri": "NOT AVAILABLE",
+                  "index": 4
                 },
                 "region": {
-                  "startLine": 200
+                  "startLine": 1
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "java.base/java.security.MessageDigest.getInstance()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "PooledConnection.java",
-                  "index": 11
-                },
-                "region": {
-                  "startLine": 307
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "PooledConnection.java",
-                  "index": 11
-                },
-                "region": {
-                  "startLine": 200
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.PooledConnection.connect()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ConnectionPool.java",
-                  "index": 12
-                },
-                "region": {
-                  "startLine": 728
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ConnectionPool.java",
-                  "index": 12
-                },
-                "region": {
-                  "startLine": 662
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ConnectionPool.java",
-                  "index": 12
-                },
-                "region": {
-                  "startLine": 480
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.init()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ConnectionPool.java",
-                  "index": 12
-                },
-                "region": {
-                  "startLine": 154
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.ConnectionPool.<init>()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "DataSourceProxy.java",
-                  "index": 13
-                },
-                "region": {
-                  "startLine": 115
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "DataSourceProxy.java",
-                  "index": 13
-                },
-                "region": {
-                  "startLine": 102
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "DataSourceProxy.java",
-                  "index": 13
-                },
-                "region": {
-                  "startLine": 126
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection()"
+                  "fullyQualifiedName": "NOT AVAILABLE"
                 }
               ]
             }
           ],
-          "ruleIndex": 6
+          "ruleIndex": 5
         },
         {
           "level": "note",
@@ -26110,160 +25195,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "Response.java",
-                  "index": 14
+                  "uri": "index.jsp",
+                  "index": 5
                 },
                 "region": {
-                  "startLine": 987
+                  "startLine": 2
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Response.java",
-                  "index": 14
-                },
-                "region": {
-                  "startLine": 923
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addSessionCookieInternal()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Request.java",
-                  "index": 15
-                },
-                "region": {
-                  "startLine": 3029
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Request.doGetSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Request.java",
-                  "index": 15
-                },
-                "region": {
-                  "startLine": 2343
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Request.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
-                },
-                "region": {
-                  "startLine": 895
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServletRequestWrapper.java",
-                  "index": 16
-                },
-                "region": {
-                  "startLine": 231
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServletRequestWrapper.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationHttpRequest.java",
-                  "index": 17
-                },
-                "region": {
-                  "startLine": 570
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationHttpRequest.java",
-                  "index": 17
-                },
-                "region": {
-                  "startLine": 515
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "PageContextImpl.java",
-                  "index": 18
-                },
-                "region": {
-                  "startLine": 137
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.jasper.runtime.PageContextImpl.initialize()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "JspFactoryImpl.java",
-                  "index": 19
-                },
-                "region": {
-                  "startLine": 109
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.jasper.runtime.JspFactoryImpl.internalGetPageContext()"
+                  "fullyQualifiedName": "index_jsp.service()"
                 }
               ]
             }
@@ -27525,7 +26466,7 @@
               }
             }
           ],
-          "ruleIndex": 7
+          "ruleIndex": 6
         },
         {
           "level": "note",
@@ -27537,160 +26478,16 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "Response.java",
-                  "index": 14
+                  "uri": "index.jsp",
+                  "index": 5
                 },
                 "region": {
-                  "startLine": 987
+                  "startLine": 2
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addHeader()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Response.java",
-                  "index": 14
-                },
-                "region": {
-                  "startLine": 923
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Response.addSessionCookieInternal()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Request.java",
-                  "index": 15
-                },
-                "region": {
-                  "startLine": 3029
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Request.doGetSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Request.java",
-                  "index": 15
-                },
-                "region": {
-                  "startLine": 2343
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.Request.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "RequestFacade.java",
-                  "index": 0
-                },
-                "region": {
-                  "startLine": 895
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.connector.RequestFacade.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "HttpServletRequestWrapper.java",
-                  "index": 16
-                },
-                "region": {
-                  "startLine": 231
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "javax.servlet.http.HttpServletRequestWrapper.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationHttpRequest.java",
-                  "index": 17
-                },
-                "region": {
-                  "startLine": 570
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "ApplicationHttpRequest.java",
-                  "index": 17
-                },
-                "region": {
-                  "startLine": 515
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.catalina.core.ApplicationHttpRequest.getSession()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "PageContextImpl.java",
-                  "index": 18
-                },
-                "region": {
-                  "startLine": 137
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.jasper.runtime.PageContextImpl.initialize()"
-                }
-              ]
-            },
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "JspFactoryImpl.java",
-                  "index": 19
-                },
-                "region": {
-                  "startLine": 109
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "org.apache.jasper.runtime.JspFactoryImpl.internalGetPageContext()"
+                  "fullyQualifiedName": "index_jsp.service()"
                 }
               ]
             }
@@ -28952,83 +27749,20 @@
               }
             }
           ],
-          "ruleIndex": 8
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Forms Without Autocomplete Prevention detected"
-          },
-          "ruleId": "Forms Without Autocomplete Prevention",
-          "webRequest": {
-            "target": "/",
-            "method": "GET",
-            "protocol": "http",
-            "version": "1.1"
-          },
-          "provenance": {
-            "firstDetectionTimeUtc": "2024-06-12T15:51:00.000Z",
-            "lastDetectionTimeUtc": "2024-06-12T15:51:00.000Z"
-          },
-          "properties": {
-            "vulnerability_id": "LYW2-1DAE-QCDR-JR73",
-            "contrast_severity": "Note",
-            "contrast_status": "Reported",
-            "contrast_substatus": ""
-          },
-          "codeFlows": [
-            {
-              "threadFlows": [],
-              "properties": {
-                "routeSignature": ""
-              }
-            }
-          ],
-          "locations": [],
-          "ruleIndex": 9
+          "ruleIndex": 7
         }
       ],
       "artifacts": [
         {
           "sourceLanguage": "Java",
           "location": {
-            "uri": "RequestFacade.java"
+            "uri": "ServiceSupport.java"
           }
         },
         {
-          "sourceLanguage": "Java",
+          "sourceLanguage": "Java Server Pages",
           "location": {
-            "uri": "LoginServlet.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "HttpServlet.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "ApplicationFilterChain.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "WsFilter.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "RequestClassificationFilter.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "MakeDepositServlet.java"
+            "uri": "error.jsp"
           }
         },
         {
@@ -29040,73 +27774,19 @@
         {
           "sourceLanguage": "Java",
           "location": {
-            "uri": "DecryptionFilter.java"
+            "uri": "CheckService.java"
           }
         },
         {
-          "sourceLanguage": "Java",
+          "sourceLanguage": "unknown",
           "location": {
-            "uri": "CheckLookupServlet.java"
+            "uri": "NOT AVAILABLE"
           }
         },
         {
-          "sourceLanguage": "Java",
+          "sourceLanguage": "Java Server Pages",
           "location": {
-            "uri": "MessageDigest.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "PooledConnection.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "ConnectionPool.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "DataSourceProxy.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "Response.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "Request.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "HttpServletRequestWrapper.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "ApplicationHttpRequest.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "PageContextImpl.java"
-          }
-        },
-        {
-          "sourceLanguage": "Java",
-          "location": {
-            "uri": "JspFactoryImpl.java"
+            "uri": "index.jsp"
           }
         }
       ]
@@ -29656,6 +28336,29 @@
             "text": "A flaw was discovered in jackson-databind in versions before 2.9.10, 2.8.11.5 and 2.6.7.3, where it would permit polymorphic deserialization of a malicious object using commons-configuration 1 and 2 JNDI classes. An attacker could use this flaw to execute arbitrary code."
           },
           "ruleId": "CVE-2019-14892",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "jackson-databind-2.8.6.jar",
+                  "index": 0
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "CRITICAL",
+            "library_version": "2.8.6",
+            "cvss_score": 9.8,
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "A flaw was discovered in FasterXML jackson-databind in all versions before 2.9.10 and 2.10.0, where it would permit polymorphic deserialization of malicious objects using the xalan JNDI gadget when used in conjunction with polymorphic type handling methods such as `enableDefaultTyping()` or when @JsonTypeInfo is using `Id.CLASS` or `Id.MINIMAL_CLASS` or in any other way which ObjectMapper.readValue might instantiate objects from unsafe sources. An attacker could use this flaw to execute arbitrary code."
+          },
+          "ruleId": "CVE-2019-14893",
           "locations": [
             {
               "physicalLocation": {
@@ -30389,6 +29092,29 @@
         {
           "level": "error",
           "message": {
+            "text": "In Apache Synapse, by default no authentication is required for Java Remote Method Invocation (RMI). So Apache Synapse 3.0.1 or all previous releases (3.0.0, 2.1.0, 2.0.0, 1.2, 1.1.2, 1.1.1) allows remote code execution attacks that can be performed by injecting specially crafted serialized objects. And the presence of Apache Commons Collections 3.2.1 (commons-collections-3.2.1.jar) or previous versions in Synapse distribution makes this exploitable. To mitigate the issue, we need to limit RMI access to trusted users only. Further upgrading to 3.0.1 version will eliminate the risk of having said Commons Collection version. In Synapse 3.0.1, Commons Collection has been updated to 3.2.2 version."
+          },
+          "ruleId": "CVE-2017-15708",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "commons-collections-3.2.1.jar",
+                  "index": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "CRITICAL",
+            "library_version": "3.2.1",
+            "cvss_score": 9.8,
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        {
+          "level": "error",
+          "message": {
             "text": "Red Hat JBoss A-MQ 6.x; BPM Suite (BPMS) 6.x; BRMS 6.x and 5.x; Data Grid (JDG) 6.x; Data Virtualization (JDV) 6.x and 5.x; Enterprise Application Platform 6.x, 5.x, and 4.3.x; Fuse 6.x; Fuse Service Works (FSW) 6.x; Operations Network (JBoss ON) 3.x; Portal 6.x; SOA Platform (SOA-P) 5.x; Web Server (JWS) 3.x; Red Hat OpenShift/xPAAS 3.x; and Red Hat Subscription Asset Manager 1.3 allow remote attackers to execute arbitrary commands via a crafted serialized Java object, related to the Apache Commons Collections (ACC) library."
           },
           "ruleId": "CVE-2015-7501",
@@ -30499,6 +29225,29 @@
             "library_version": "4.3.6.RELEASE",
             "cvss_score": 9.8,
             "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        {
+          "level": "note",
+          "message": {
+            "text": "In Spring Framework versions 5.2.0 - 5.2.8, 5.1.0 - 5.1.17, 5.0.0 - 5.0.18, 4.3.0 - 4.3.28, and older unsupported versions, the protections against RFD attacks from CVE-2015-5211 may be bypassed depending on the browser used through the use of a jsessionid path parameter."
+          },
+          "ruleId": "CVE-2020-5421",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "spring-web-4.3.6.release.jar",
+                  "index": 3
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "MEDIUM",
+            "library_version": "4.3.6.RELEASE",
+            "cvss_score": 6.5,
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:H/A:N"
           }
         },
         {
@@ -30872,6 +29621,29 @@
         {
           "level": "warning",
           "message": {
+            "text": "Apache Tomcat 8.5.0 to 8.5.63, 9.0.0-M1 to 9.0.43 and 10.0.0-M1 to 10.0.2 did not properly validate incoming TLS packets. When Tomcat was configured to use NIO+OpenSSL or NIO2+OpenSSL for TLS, a specially crafted packet could be used to trigger an infinite loop resulting in a denial of service."
+          },
+          "ruleId": "CVE-2021-41079",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tomcat-embed-core-8.0.53.jar",
+                  "index": 6
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "HIGH",
+            "library_version": "8.0.53",
+            "cvss_score": 7.5,
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        },
+        {
+          "level": "warning",
+          "message": {
             "text": "The HTTP/2 implementation in Apache Tomcat 9.0.0.M1 to 9.0.14 and 8.5.0 to 8.5.37 accepted streams with excessive numbers of SETTINGS frames and also permitted clients to keep streams open without reading/writing request/response data. By keeping streams open for requests that utilised the Servlet API's blocking I/O, clients were able to cause server-side threads to block eventually leading to thread exhaustion and a DoS."
           },
           "ruleId": "CVE-2019-0199",
@@ -31005,6 +29777,29 @@
             "library_version": "4.3.6.RELEASE",
             "cvss_score": 9.8,
             "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Spring Framework, versions 5.0 prior to 5.0.5 and versions 4.3 prior to 4.3.15 and older unsupported versions, provide client-side support for multipart requests. When Spring MVC or Spring WebFlux server application (server A) receives input from a remote client, and then uses that input to make a multipart request to another server (server B), it can be exposed to an attack, where an extra multipart is inserted in the content of the request from server A, causing server B to use the wrong value for a part it expects. This could to lead privilege escalation, for example, if the part content represents a username or user roles."
+          },
+          "ruleId": "CVE-2018-1272",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "spring-webmvc-4.3.6.release.jar",
+                  "index": 7
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "HIGH",
+            "library_version": "4.3.6.RELEASE",
+            "cvss_score": 7.5,
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
           }
         },
         {
@@ -31212,6 +30007,29 @@
             "library_version": "4.3.6.RELEASE",
             "cvss_score": 5.3,
             "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          }
+        },
+        {
+          "level": "note",
+          "message": {
+            "text": "In Spring Framework versions 5.3.0 - 5.3.13, 5.2.0 - 5.2.18, and older unsupported versions, it is possible for a user to provide malicious input to cause the insertion of additional log entries. This is a follow-up to CVE-2021-22096 that protects against additional types of input and in more places of the Spring Framework codebase."
+          },
+          "ruleId": "CVE-2021-22060",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "spring-core-4.3.6.release.jar",
+                  "index": 9
+                }
+              }
+            }
+          ],
+          "properties": {
+            "contrast_severity": "MEDIUM",
+            "library_version": "4.3.6.RELEASE",
+            "cvss_score": 4.3,
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
           }
         },
         {
@@ -31654,29 +30472,6 @@
         {
           "level": "note",
           "message": {
-            "text": "The default catalina.policy in the JULI logging component in Apache Tomcat 5.5.9 through 5.5.25 and 6.0.0 through 6.0.15 does not restrict certain permissions for web applications, which allows attackers to modify logging configuration options and overwrite arbitrary files, as demonstrated by changing the (1) level, (2) directory, and (3) prefix attributes in the org.apache.juli.FileHandler handler."
-          },
-          "ruleId": "CVE-2007-5342",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tomcat-juli-8.0.53.jar",
-                  "index": 20
-                }
-              }
-            }
-          ],
-          "properties": {
-            "contrast_severity": "MEDIUM",
-            "library_version": "8.0.53",
-            "cvss_score": 0,
-            "vector": null
-          }
-        },
-        {
-          "level": "note",
-          "message": {
             "text": "This affects Spring Data JPA in versions up to and including 2.1.6, 2.0.14 and 1.11.20. ExampleMatcher using ExampleMatcher.StringMatcher.STARTING, ExampleMatcher.StringMatcher.ENDING or ExampleMatcher.StringMatcher.CONTAINING could return more results than anticipated when a maliciously crafted example value is supplied."
           },
           "ruleId": "CVE-2019-3802",
@@ -31685,7 +30480,7 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "spring-data-jpa-1.11.0.release.jar",
-                  "index": 21
+                  "index": 20
                 }
               }
             }
@@ -31708,7 +30503,7 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "spring-data-jpa-1.11.0.release.jar",
-                  "index": 21
+                  "index": 20
                 }
               }
             }
@@ -31731,7 +30526,7 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "spring-context-4.3.6.release.jar",
-                  "index": 22
+                  "index": 21
                 }
               }
             }
@@ -31863,12 +30658,6 @@
           "sourceLanguage": "unknown",
           "location": {
             "uri": "spring-expression-4.3.6.release.jar"
-          }
-        },
-        {
-          "sourceLanguage": "unknown",
-          "location": {
-            "uri": "tomcat-juli-8.0.53.jar"
           }
         },
         {
