@@ -134,6 +134,41 @@
                       "location": {
                         "physicalLocation": {
                           "artifactLocation": {
+                            "uri": "LoginServlet.java"
+                          },
+                          "region": {
+                            "startLine": 63
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.servlet.LoginServlet.doPost()"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "ServiceSupport.java",
+                            "index": 0
+                          },
+                          "region": {
+                            "startLine": 37
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "fullyQualifiedName": "com.joshcummings.codeplay.terracotta.service.ServiceSupport.runQuery()"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
                             "uri": "RequestFacade.java"
                           },
                           "region": {
