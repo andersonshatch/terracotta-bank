@@ -15,9 +15,14 @@ jobs:
       actions: read
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      # Uploads results.sarif to GitHub repository using the upload-sarif action
-      - uses: github/codeql-action/upload-sarif@v3
+      - name: Contrast SCA Action
+        uses: Contrast-Security-OSS/contrast-sca-action@v1
         with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: contrast.sarif
+          apiKey: ${{ secrets.CONTRAST_API_KEY }}
+          orgId: 9eb886b2-2cc8-4476-be35-d9fae474c47f
+          authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
+          apiUrl: https://apptwo.contrastsecurity.com
+          applicationId: 48df5e8b-8bf4-4179-b95e-5ff6da916d90
+          filePath: .
+          #severity: medium
+          command: sarif
