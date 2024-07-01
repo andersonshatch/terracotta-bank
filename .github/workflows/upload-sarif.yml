@@ -16,7 +16,7 @@ jobs:
       contents: read
     steps:
       - name: Contrast SCA Action
-        uses: Contrast-Security-OSS/contrast-sca-action@v1
+        uses: Contrast-Security-OSS/contrast-sca-action@v2
         with:
           apiKey: ${{ secrets.CONTRAST_API_KEY }}
           orgId: 9eb886b2-2cc8-4476-be35-d9fae474c47f
