@@ -1,7 +1,5 @@
 name: "SARIF upload"
 
-# Run workflow each time code is pushed to your repository and on a schedule.
-# The scheduled workflow runs every Wednesday at 15:45 UTC.
 on:
   workflow_dispatch:
 
@@ -9,15 +7,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      # required for all workflows
       security-events: write
-      # only required for workflows in private repositories
       actions: read
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      # Uploads results.sarif to GitHub repository using the upload-sarif action
-      - uses: github/codeql-action/upload-sarif@v3
+      - name: Get Contrast SARIF
+        uses: Contrast-Security-OSS/contrast-sca-action@v2
         with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: contrast.sarif
+          apiKey: ${{ secrets.CONTRAST_API_KEY }}
+          apiUrl: https://apptwo.contrastsecurity.com
+          applicationId: 48df5e8b-8bf4-4179-b95e-5ff6da916d90
+          authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
+          command: sarif
+          #ghasEnabled: false
+          #metadata: sessionMetadataKey1=value,key2=value...
+          orgId: 9eb886b2-2cc8-4476-be35-d9fae474c47f
