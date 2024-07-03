@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Get Contrast SARIF
         uses: Contrast-Security-OSS/contrast-sca-action@v2
+        env:
+          NODE_DEBUG: http,https
         with:
           apiKey: ${{ secrets.CONTRAST_API_KEY }}
           apiUrl: https://apptwo.contrastsecurity.com
