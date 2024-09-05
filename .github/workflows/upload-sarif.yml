@@ -12,7 +12,7 @@ jobs:
       contents: read
     steps:
       - name: Get Contrast SARIF
-        uses: Contrast-Security-OSS/contrast-sca-action@sarif-api-pre-release
+        uses: Contrast-Security-OSS/contrast-sarif-action@sarif-api-pre-release
         with:
           apiKey: ${{ secrets.CONTRAST_API_KEY }}
           apiUrl: https://apptwo.contrastsecurity.com
