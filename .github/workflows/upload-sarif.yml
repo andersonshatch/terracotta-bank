@@ -12,7 +12,7 @@ jobs:
       contents: read
     steps:
       - name: Get Contrast SARIF
-        uses: Contrast-Security-OSS/contrast-sarif-action@9ed87d26b3451c1cfb1b94a5ee66a80cfd193fec
+        uses: andersonshatch/contrast-sarif-action@d0c3fc64f4dfd7c3c1b86026cef590b12fd9b2ea
         with:
           apiKey: ${{ secrets.CONTRAST_API_KEY }}
           apiUrl: https://apptwo.contrastsecurity.com
