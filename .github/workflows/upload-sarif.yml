@@ -2,10 +2,17 @@ name: "SARIF upload"
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Environment
+        options: 
+          - apptwo
+          - staging
 
 jobs:
   build:
-    environment: staging
+    environment: ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -17,7 +24,7 @@ jobs:
         with:
           apiKey: ${{ secrets.CONTRAST_API_KEY }}
           apiUrl: ${{ secrets.CONTRAST_API_URL }}
-          applicationId: 9464c8c8-4b6b-46db-bff7-4da505efe960
+          applicationId: ${{ secrets.CONTRAST_APP_ID }}
           authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
           command: sarif
           #ghasEnabled: false
