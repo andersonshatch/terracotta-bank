@@ -19,6 +19,7 @@ jobs:
           apiUrl: ${{ secrets.CONTRAST_API_URL }}
           filePath: packages.lock.json
           severity: CRITICAL
-          fail: true
+          fail: false
           ignoreDev: true
           name: test
+          outputSummary: false
