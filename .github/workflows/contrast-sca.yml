@@ -2,9 +2,9 @@ name: Contrast Security SCA
 
 on:
   workflow_dispatch:
-env: staging
 jobs:
   Check-Dependency-Vulnerabilities:
+    environment: staging
     runs-on: ubuntu-latest
     steps:
         # Checkout/build your application/install Node
