@@ -2,7 +2,7 @@ name: Contrast Security SCA
 
 on:
   workflow_dispatch:
-
+env: staging
 jobs:
   Check-Dependency-Vulnerabilities:
     runs-on: ubuntu-latest
